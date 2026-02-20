@@ -14,7 +14,7 @@ editor: visual
 
 library(tidyverse) # general use package
 library(lterdatasampler) # package of data sets
-
+library(NatParksPalettes)
 data(pie_crab) # crab size data set
 ```
 
@@ -25,7 +25,13 @@ data(pie_crab) # crab size data set
 # base layer: ggplot
 ggplot(data = pie_crab, # data set
        aes(x = latitude, # x axis should be latitude 
-           y = size)) +
-  geom_point()
+           y = size,
+           color = site)) + # y axis should be size
+  # first layer : points to represent individual crabs
+  geom_point() +
+  scale_color_manual(
+    values = natparks.pals("Arches", n = 13, type = "continuous")
+  ) +
+  theme_minimal()
 ```
 
