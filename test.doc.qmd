@@ -1,0 +1,19 @@
+---
+title: "test doc for 9 am"
+author: "Yaasiel Leos Ledesma"
+date: "2026-02-20"
+format: html
+editor: visual
+---
+
+# Set up
+
+```{r}
+#| label: Packages and Data
+
+library # general use package
+library(lterdatasampler) # package of data sets
+
+data(pie_crab) # crab size dataset
+```
+
