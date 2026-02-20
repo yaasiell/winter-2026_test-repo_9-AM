@@ -10,10 +10,22 @@ editor: visual
 
 ```{r}
 #| label: Packages and Data
+#| message: false
 
-library # general use package
+library(tidyverse) # general use package
 library(lterdatasampler) # package of data sets
 
-data(pie_crab) # crab size dataset
+data(pie_crab) # crab size data set
+```
+
+# Exporatory data visualization
+
+```{r}
+#| label: latitude and size plot
+# base layer: ggplot
+ggplot(data = pie_crab, # data set
+       aes(x = latitude, # x axis should be latitude 
+           y = size)) +
+  geom_point()
 ```
 
